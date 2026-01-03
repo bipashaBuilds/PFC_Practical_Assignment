@@ -1,0 +1,31 @@
+//Write a C program that uses a user-defined function to swap two numbers using call by reference.
+//The function should take the addresses of the variables as parameters and modify their values.
+#include <stdio.h>
+void swap(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int main() {
+    int x, y;
+    printf("Enter two numbers:\n");
+    scanf("%d %d", &x, &y);
+    printf("\nBefore swapping:\n");
+    printf("x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("\nAfter swapping:\n");
+    printf("x = %d, y = %d\n", x, y);
+    return 0;
+}
+
+/*OUTPUT
+Enter two numbers:
+67
+90
+
+Before swapping:
+x = 67, y = 90
+
+After swapping:
+x = 90, y = 67 */
